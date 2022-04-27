@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Math is Fun!</title>
+</head>
+
+<body>
+
+    <div>
+        <h1>Let's Practice Math!</h1>
+    </div>
+
+    <div id="div2">
+
+    <p id="quest">Would you like to Practice Adding or 
+        Subtracting?
+    </p>
+
+    <button id="myAdd" onclick="myAdd()">Adding</button>
+    <button id="mySub" onclick="mySub()">Subtracting</button>
+
+    
+    <p id="num1"></p>
+    <p id="demo"></p>
+    <p id="num2"></p>
+    
+    <input type="text" id="input" placeholder="your answer"/>
+    <button id="submitAdd" onclick="resultAdd();">Check Answer</button>
+    <button id="submitSub" onclick="resultSub();">Check Answer</button>
+    <br><br>
+
+    <img class="owl" src="owl.jpg" alt="good job owl" width="200px" height="200px">
+    <img class="owl2" src="tryAgain.jpg" alt="try again owl" width="200px" height="200px">
+
+    <br>
+
+    <button id="nextButton" onclick ="refreshPage();">New Problem</button>
+
+    </div>
+    
+</body>
+
+<script>
+
+$(document).ready(function(){
+    $("#nextButton").hide();
+});
+
+$(document).ready(function(){
+        $(".owl").hide();
+    });
+
+$(document).ready(function(){
+    $(".owl2").hide();
+});
+
+
+$(document).ready(function() {
+    $("#input").hide();
+    $("#submitAdd").hide();
+	$("#myAdd").click(function(){
+        $("#input").slideDown();
+        $("#submitAdd").slideDown();
+	});
+});
+
+$(document).ready(function() {
+    $("#input").hide();
+    $("#submitSub").hide();
+	$("#mySub").click(function(){
+        $("#input").slideDown();
+        $("#submitSub").slideDown();
+	});
+});
+
+var x = Math.floor(Math.random() * 20) +2;
+var y = Math.floor(Math.random() * 20) +2;
+
+
+function myAdd(){
+
+    var operator = "+";
+    document.getElementById("demo").innerHTML = operator;
+    displayNums();
+
+}
+
+function mySub(){
+
+    var operator = "-";
+    document.getElementById("demo").innerHTML = operator;
+    displayNums();
+    
+
+}
+
+function displayNums(){
+
+    document.getElementById("num1").innerHTML = x;
+    document.getElementById("num2").innerHTML = y;
+
+}
+
+function resultAdd(){
+
+    var result = x + y
+    var userInput = document.getElementById("input").value;
+
+
+    if(userInput == result){
+        //alert('You Got It!');
+        $(document).ready(function(){
+        $(".owl2").hide();
+	    $(".owl").hide();
+	    $(".owl").fadeIn(3000);
+        $("#nextButton").show();
+
+    });
+
+    
+
+    }
+    else{
+        //alert('Try Again');
+        $(document).ready(function(){
+        $(".owl").hide();
+	    $(".owl2").hide();
+	    $(".owl2").fadeIn(3000);
+    });
+    }
+
+}
+
+function resultSub(){
+
+    var result = x - y;
+    var userInput = document.getElementById("input").value;
+
+    if(userInput == result){
+        //alert('You got it!');
+        $(document).ready(function(){
+        $(".owl2").hide();
+	    $(".owl").hide();
+	    $(".owl").fadeIn(3000);
+        $("#nextButton").show();
+
+        });
+    }
+    else{
+        //alert('Try again');
+        $(document).ready(function(){
+        $(".owl").hide();
+	    $(".owl2").hide();
+	    $(".owl2").fadeIn(3000);
+    });
+    }
+}
+
+function refreshPage(){
+
+    window.location.reload();
+
+}
+
+
+
+var result = x + y;
+console.log(result);
+
+
+
+//console.log(x);
+//console.log(y);
+
+
+
+
+
+
+
+</script>
+</html>

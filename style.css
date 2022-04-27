@@ -1,0 +1,40 @@
+html {
+    background-color: blueviolet;
+}
+
+div {
+    background-color: darkmagenta;
+}
+
+#div2 {
+    background-color: lightseagreen;
+}
+
+#num1 {
+    text-indent: 10px;
+}
+
+#num2 {
+    text-indent: 10px;
+}
+#input {
+    border-radius: 12px;
+    text-align: center;
+}
+
+h1 {
+    font-family: Georgia;
+    font-size: 40px;
+}
+
+#quest {
+    font-family: Georgia;
+    font-size: 16px;
+}
+
+button {
+    background-color: lightskyblue;
+    font-family: Georgia;
+    font-size: 0.875em;
+    border-radius: 12px;
+}
